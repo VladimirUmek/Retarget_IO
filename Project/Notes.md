@@ -210,3 +210,65 @@ ARM: The return value is one of the following:
               - An error indication.
               - An EOF indicator. The EOF indication involves the setting of
                 0x80000000 in the normal result.
+
+# Retarget IAR
+
+See EWARM_DevelopmentGuide.ENU.pdf
+
+## Low-level I/O interface
+
+See .\Program Files\IAR Systems\Embedded Workbench 9.1\arm\inc\c\LowLevelIOInterface.h
+
+abort
+__aeabi_assert
+clock
+__close
+__exit
+getenv
+__getzone
+__lseek
+__open
+raise
+__read
+remove
+rename
+signal
+system
+__time32, __time64
+__write
+
+## Multithread Locks
+
+See .\Program Files\IAR Systems\Embedded Workbench 9.1\arm\inc\c\DLib_Threads.h
+
+void __iar_system_Mtxinit(__iar_Rmtx *);   // Initialize a system lock
+void __iar_system_Mtxdst(__iar_Rmtx *);    // Destroy a system lock
+void __iar_system_Mtxlock(__iar_Rmtx *);   // Lock a system lock
+void __iar_system_Mtxunlock(__iar_Rmtx *); // Unlock a system lock
+void __iar_file_Mtxinit(__iar_Rmtx *);     // Initialize a file lock
+void __iar_file_Mtxdst(__iar_Rmtx *);      // Destroy a file lock
+void __iar_file_Mtxlock(__iar_Rmtx *);     // Lock a file lock
+void __iar_file_Mtxunlock(__iar_Rmtx *);   // Unlock a file lock
+void __iar_Initdynamiclock(__iar_Rmtx *);  // Initialize a C++ dynamic lock
+void __iar_Dstdynamiclock(__iar_Rmtx *);   // Destroy a C++ dynamic lock
+void __iar_Lockdynamiclock(__iar_Rmtx *);  // Lock a C++ dynamic lock
+void __iar_Unlockdynamiclock(__iar_Rmtx *);// Unlock a C++ dynamic lock
+
+void __iar_Initlocks(void);
+void __iar_clearlocks(void);
+
+## Thread Local Storage
+
+See .\Program Files\IAR Systems\Embedded Workbench 9.1\arm\inc\c\DLib_Threads.h
+
+/* Function that returns the size needed for the TLS memory area. */
+size_t __iar_tls_size(void);
+
+/* Function that initializes an allocated memory area in the TLS segment __iar_tls$$DATA. The remaining memory is zeroed based on __iar_tls_size(). */
+void __iar_tls_init(void *);
+
+/* Function that calls the destructor for each dynamically initialized object of a thread (C++). */
+__WEAK void __call_thread_dtors(void);
+
+/* Initializes the main thread, called automatically. */
+void const * __iar_cstart_tls_init(void const * p);
