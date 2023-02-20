@@ -272,3 +272,33 @@ __WEAK void __call_thread_dtors(void);
 
 /* Initializes the main thread, called automatically. */
 void const * __iar_cstart_tls_init(void const * p);
+
+# Newlib Syscall List
+https://pubs.opengroup.org/onlinepubs/9699919799/
+
+_close            implemented
+_execve           not available                 
+_fcntl            not available, POSIX only
+_fork             not available, POSIX only
+_fstat            implemented
+_getpid           implemented
+_gettimeofday
+_isatty           implemented
+_kill             implemented
+_link             implemented
+_lseek            implemented
+_mkdir
+_open             implemented
+_read             implemented
+_sbrk             implemented
+_stat
+_times
+_unlink           implemented
+_wait
+_write            implemented
+
+#if defined HAVE_OPENDIR
+_opendir
+_readdir
+_closedir
+#endif

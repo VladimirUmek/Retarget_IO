@@ -1734,8 +1734,17 @@
           <targetInfo name="GCC nostartfiles"/>
         </targetInfos>
       </component>
-      <component Cclass="Compiler" Cgroup="I/O" Csub="File" Cvariant="User" Cvendor="ARM" Cversion="1.0.0" condition="GCC Cortex-M">
-        <package name="GCC_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="0.0.0-dirty1+g55c24ba"/>
+      <component Cclass="Compiler" Cgroup="File Interface" Cvariant="User" Cvendor="ARM" Cversion="1.0.0" condition="GCC Cortex-M File Interface">
+        <package name="GCC_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="0.0.0-dirty1+gf72aa38"/>
+        <targetInfos>
+          <targetInfo name="GCC"/>
+          <targetInfo name="GCC nano"/>
+          <targetInfo name="GCC nano nostartfiles"/>
+          <targetInfo name="GCC nostartfiles"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Compiler" Cgroup="I/O" Csub="File" Cvariant="File Interface" Cvendor="ARM" Cversion="1.0.0" condition="GCC Cortex-M IO File Interface">
+        <package name="GCC_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="0.0.0-dirty1+gf72aa38"/>
         <targetInfos>
           <targetInfo name="GCC"/>
           <targetInfo name="GCC nano"/>
@@ -1744,7 +1753,7 @@
         </targetInfos>
       </component>
       <component Cclass="Compiler" Cgroup="I/O" Csub="STDERR" Cvariant="ITM" Cvendor="ARM" Cversion="1.0.0" condition="GCC Cortex-M with ITM">
-        <package name="GCC_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="0.0.0-dirty1+g55c24ba"/>
+        <package name="GCC_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="0.0.0-dirty1+gf72aa38"/>
         <targetInfos>
           <targetInfo name="GCC"/>
           <targetInfo name="GCC nano"/>
@@ -1753,7 +1762,7 @@
         </targetInfos>
       </component>
       <component Cclass="Compiler" Cgroup="I/O" Csub="STDIN" Cvariant="ITM" Cvendor="ARM" Cversion="1.0.0" condition="GCC Cortex-M with ITM">
-        <package name="GCC_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="0.0.0-dirty1+g55c24ba"/>
+        <package name="GCC_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="0.0.0-dirty1+gf72aa38"/>
         <targetInfos>
           <targetInfo name="GCC"/>
           <targetInfo name="GCC nano"/>
@@ -1762,7 +1771,7 @@
         </targetInfos>
       </component>
       <component Cclass="Compiler" Cgroup="I/O" Csub="STDOUT" Cvariant="User" Cvendor="ARM" Cversion="1.0.0" condition="GCC Cortex-M">
-        <package name="GCC_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="0.0.0-dirty1+g55c24ba"/>
+        <package name="GCC_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="0.0.0-dirty1+gf72aa38"/>
         <targetInfos>
           <targetInfo name="GCC"/>
           <targetInfo name="GCC nano"/>
@@ -1771,7 +1780,7 @@
         </targetInfos>
       </component>
       <component Cclass="Compiler" Cgroup="OS Interface" Cvariant="CMSIS-RTOS2" Cvendor="ARM" Cversion="1.0.0" condition="GCC Cortex-M">
-        <package name="GCC_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="0.0.0-dirty1+g55c24ba"/>
+        <package name="GCC_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="0.0.0-dirty1+gf72aa38"/>
         <targetInfos>
           <targetInfo name="GCC"/>
           <targetInfo name="GCC nano"/>
