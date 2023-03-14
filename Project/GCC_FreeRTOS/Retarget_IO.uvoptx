@@ -1115,8 +1115,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\file_user.c</PathWithFileName>
-      <FilenameWithoutPath>file_user.c</FilenameWithoutPath>
+      <PathWithFileName>..\retarget_fs.c</PathWithFileName>
+      <FilenameWithoutPath>retarget_fs.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

@@ -1,7 +1,34 @@
-# Call chains and Notes To Myself
----------------------------------
+# Notes On Retargeting
+----------------------
 
 See https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html
+
+## Retarget Files
+
+### ARM
+```
+#include <rt_sys.h>
+#include <rt_heap.h>
+#include <rt_locale.h>
+#include <rt_misc.h>
+```
+
+### GCC
+```
+#include <unistd.h>
+#include <sys/reent.h>
+#include <sys/lock.h>
+```
+
+### IAR
+```
+#include "LowLevelIOInterface.h"
+#include "DLib_Threads.h"
+```
+
+
+# Call chains
+-------------
 
 ## Reset
 
@@ -61,6 +88,12 @@ fopen -> _fopen_r -> __sflags
                   -> __sfp -> _malloc_r -> __malloc_lock   -> __retarget_lock_acquire_recursive
                                         -> __malloc_unlock -> __retarget_lock_release_recursive
                   -> _open_r -> _open
+```
+
+```
+fclose -> _fclose_r -> __retarget_lock_acquire_recursive
+                    -> __sflush_r -> _lseek_r -> _lseek (whence=FS_SEEK_CUR, offset=0) (to retrieve current offset)
+                                              -> _lseek (whence=FS_SEEK_SET, offset=current)
 ```
 
 ```

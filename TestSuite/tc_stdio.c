@@ -395,22 +395,45 @@ void TC_fread_1 (void) {
     size   = 1;
     nitems = 1;
     ASSERT_TRUE (fread (buf, size, nitems, f) == 1);
+    /* Close opened file */
+    ASSERT_TRUE (fclose(f) == 0);
+  }
 
+  /* Open a file in 'r' mode */
+  f = fopen (path, "r");
+  ASSERT_TRUE (f != NULL);
+
+  if (f != NULL) {
     /* Call fread using argument size == 4 and nitems == 4 */
     size   = 4;
     nitems = 4;
     ASSERT_TRUE (fread (buf, size, nitems, f) == nitems);
+    /* Close opened file */
+    ASSERT_TRUE (fclose(f) == 0);
+  }
 
+  /* Open a file in 'r' mode */
+  f = fopen (path, "r");
+  ASSERT_TRUE (f != NULL);
+
+  if (f != NULL) {
     /* Call fread using argument size == 2 and nitems == 8 */
     size   = 2;
     nitems = 8;
     ASSERT_TRUE (fread (buf, size, nitems, f) == nitems);
+    /* Close opened file */
+    ASSERT_TRUE (fclose(f) == 0);
+  }
 
+  /* Open a file in 'r' mode */
+  f = fopen (path, "r");
+  ASSERT_TRUE (f != NULL);
+
+  if (f != NULL) {
     /* Call fread using argument size == 8 and nitems == 2 */
     size   = 8;
     nitems = 2;
     ASSERT_TRUE (fread (buf, size, nitems, f) == nitems);
-
     /* Close opened file */
     ASSERT_TRUE (fclose(f) == 0);
   }

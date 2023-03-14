@@ -19,10 +19,8 @@
 #include "test.h"
 #include "test_config_device.h"
 
-#if defined(RTE_Compiler_IO_File)
-  #if defined(RTE_Compiler_IO_File_MDKFS)
-    #include "rl_fs.h"
-  #endif
+#if defined(RTE_Compiler_File_Interface_MDK)
+#include "rl_fs.h"
 #endif
 
 /* Prototypes */
@@ -65,12 +63,10 @@ void TS_Init (void) {
   NVIC_EnableIRQ((IRQn_Type)TST_IRQ_NUM_A);
   NVIC_EnableIRQ((IRQn_Type)TST_IRQ_NUM_B);
 
-#if defined(RTE_Compiler_IO_File)
-  #if defined(RTE_Compiler_IO_File_MDKFS)
+#if defined(RTE_Compiler_File_Interface_MDK)
   finit("R0");
   fmount("R0");
   fformat("R0", NULL);
-  #endif
 #endif
 }
 
