@@ -3605,7 +3605,7 @@
       <Size>100</Size>
       <ActiveTab>0</ActiveTab>
       <Doc>
-        <Name>C:/Arm/Packs/ARM/ARM_Compiler/1.0.0-dev2/Source/retarget_io.c</Name>
+        <Name>C:/Arm/Packs/ARM/ARM_Compiler/1.0.0-dev12/Source/retarget_io.c</Name>
         <ColumnNumber>0</ColumnNumber>
         <TopLine>1</TopLine>
         <CurrentLine>1</CurrentLine>
@@ -3614,16 +3614,7 @@
         <PaneID>0</PaneID>
       </Doc>
       <Doc>
-        <Name>C:/Arm/Packs/ARM/ARM_Compiler/1.0.0-dev2/Source/retarget_osi_rtos2.c</Name>
-        <ColumnNumber>0</ColumnNumber>
-        <TopLine>1</TopLine>
-        <CurrentLine>1</CurrentLine>
-        <Folding>1</Folding>
-        <ContractedFolders></ContractedFolders>
-        <PaneID>0</PaneID>
-      </Doc>
-      <Doc>
-        <Name>C:/Arm/Packs/ARM/ARM_Compiler/1.0.0-dev2/Source/file_mdk-fs.c</Name>
+        <Name>C:/Arm/Packs/ARM/ARM_Compiler/1.0.0-dev12/Source/retarget_os_rtos2.c</Name>
         <ColumnNumber>0</ColumnNumber>
         <TopLine>1</TopLine>
         <CurrentLine>1</CurrentLine>
