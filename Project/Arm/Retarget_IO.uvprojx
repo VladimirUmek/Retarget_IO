@@ -16,8 +16,8 @@
         <TargetCommonOption>
           <Device>ARMCM3</Device>
           <Vendor>ARM</Vendor>
-          <PackID>ARM.CMSIS.5.9.0</PackID>
-          <PackURL>http://www.keil.com/pack/</PackURL>
+          <PackID>ARM.CMSIS.5.9.1-dev116</PackID>
+          <PackURL>https://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x00020000) IROM(0x00000000,0x00040000) CPUTYPE("Cortex-M3") CLOCK(12000000) ESEL ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
@@ -445,7 +445,10 @@
           <GroupName>::CMSIS</GroupName>
         </Group>
         <Group>
-          <GroupName>::Compiler</GroupName>
+          <GroupName>::CMSIS-Compiler</GroupName>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS-View</GroupName>
         </Group>
         <Group>
           <GroupName>::Device</GroupName>
@@ -459,39 +462,19 @@
 
   <RTE>
     <apis>
+      <api Capiversion="1.0.0" Cclass="CMSIS-Compiler" Cgroup="File Interface" condition="CortexDevice" exclusive="1">
+        <package name="CMSIS-Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev34+ge49e9cc"/>
+        <targetInfos>
+          <targetInfo name="Arm"/>
+        </targetInfos>
+      </api>
+      <api Capiversion="1.0.0" Cclass="CMSIS-Compiler" Cgroup="OS Interface" condition="CortexDevice" exclusive="1">
+        <package name="CMSIS-Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev34+ge49e9cc"/>
+        <targetInfos>
+          <targetInfo name="Arm"/>
+        </targetInfos>
+      </api>
       <api Capiversion="2.1.3" Cclass="CMSIS" Cgroup="RTOS2" exclusive="1">
-        <package name="CMSIS" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0"/>
-        <targetInfos>
-          <targetInfo name="Arm"/>
-        </targetInfos>
-      </api>
-      <api Capiversion="1.0.0" Cclass="Compiler" Cgroup="File Interface" condition="ARMCC Cortex-M" exclusive="1">
-        <package name="ARM_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev12+g340b600"/>
-        <targetInfos>
-          <targetInfo name="Arm"/>
-        </targetInfos>
-      </api>
-      <api Capiversion="1.0.0" Cclass="Compiler" Cgroup="OS Interface" condition="ARMCC Cortex-M" exclusive="1">
-        <package name="ARM_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev12+g340b600"/>
-        <targetInfos>
-          <targetInfo name="Arm"/>
-        </targetInfos>
-      </api>
-    </apis>
-    <components>
-      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.6.0" condition="ARMv6_7_8-M Device">
-        <package name="CMSIS" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0"/>
-        <targetInfos>
-          <targetInfo name="Arm"/>
-        </targetInfos>
-      </component>
-      <component Cclass="CMSIS" Cgroup="Event Recorder" Cvariant="DAP" Cvendor="ARM" Cversion="1.5.2" condition="Cortex-M Device">
-        <package name="CMSIS-View" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="1.1.2-dev31+g21d6ad7"/>
-        <targetInfos>
-          <targetInfo name="Arm"/>
-        </targetInfos>
-      </component>
-      <component Capiversion="2.1.3" Cclass="CMSIS" Cgroup="RTOS2" Csub="Keil RTX5" Cvariant="Source" Cvendor="ARM" Cversion="5.5.4" condition="RTOS2 RTX5">
         <package name="CMSIS" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0"/>
         <targetInfos>
           <targetInfo name="Arm">
@@ -500,51 +483,75 @@
             </c>
           </targetInfo>
         </targetInfos>
-      </component>
-      <component Capiversion="1.0.0" Cclass="Compiler" Cgroup="File Interface" Csub="Custom" Cvendor="ARM" Cversion="1.0.0" condition="ARMCC Cortex-M File Interface" custom="1">
-        <package name="ARM_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev12+g340b600"/>
+      </api>
+    </apis>
+    <components>
+      <component Capiversion="1.0.0" Cclass="CMSIS-Compiler" Cgroup="File Interface" Csub="Custom" Cvendor="ARM" Cversion="1.0.0" condition="CortexDevice" custom="1">
+        <package name="CMSIS-Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev34+ge49e9cc"/>
         <targetInfos>
           <targetInfo name="Arm"/>
         </targetInfos>
       </component>
-      <component Cclass="Compiler" Cgroup="I/O" Csub="File" Cvariant="File Interface" Cvendor="ARM" Cversion="1.0.0" condition="ARMCC Cortex-M IO File Interface">
-        <package name="ARM_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev12+g340b600"/>
+      <component Cclass="CMSIS-Compiler" Cgroup="I/O" Csub="File" Cvariant="File Interface" Cvendor="ARM" Cversion="1.0.0" condition="CortexDevice FileInterface">
+        <package name="CMSIS-Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev34+ge49e9cc"/>
         <targetInfos>
           <targetInfo name="Arm"/>
         </targetInfos>
       </component>
-      <component Cclass="Compiler" Cgroup="I/O" Csub="STDERR" Cvariant="ITM" Cvendor="ARM" Cversion="1.2.0" condition="ARMCC Cortex-M with ITM">
-        <package name="ARM_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev12+g340b600"/>
+      <component Cclass="CMSIS-Compiler" Cgroup="I/O" Csub="STDERR" Cvariant="ITM" Cvendor="ARM" Cversion="1.0.0" condition="CortexDevice ITM">
+        <package name="CMSIS-Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev34+ge49e9cc"/>
         <targetInfos>
           <targetInfo name="Arm"/>
         </targetInfos>
       </component>
-      <component Cclass="Compiler" Cgroup="I/O" Csub="STDIN" Cvariant="ITM" Cvendor="ARM" Cversion="1.2.0" condition="ARMCC Cortex-M with ITM">
-        <package name="ARM_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev12+g340b600"/>
+      <component Cclass="CMSIS-Compiler" Cgroup="I/O" Csub="STDIN" Cvariant="ITM" Cvendor="ARM" Cversion="1.0.0" condition="CortexDevice ITM">
+        <package name="CMSIS-Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev34+ge49e9cc"/>
         <targetInfos>
           <targetInfo name="Arm"/>
         </targetInfos>
       </component>
-      <component Cclass="Compiler" Cgroup="I/O" Csub="STDOUT" Cvariant="User" Cvendor="ARM" Cversion="1.2.0" condition="ARMCC Cortex-M">
-        <package name="ARM_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev12+g340b600"/>
+      <component Cclass="CMSIS-Compiler" Cgroup="I/O" Csub="STDOUT" Cvariant="User" Cvendor="ARM" Cversion="1.0.0" condition="CortexDevice">
+        <package name="CMSIS-Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev34+ge49e9cc"/>
         <targetInfos>
           <targetInfo name="Arm"/>
         </targetInfos>
       </component>
-      <component Cclass="Compiler" Cgroup="I/O" Csub="TTY" Cvariant="Breakpoint" Cvendor="ARM" Cversion="1.2.0" condition="ARMCC Cortex-M">
-        <package name="ARM_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev12+g340b600"/>
+      <component Cclass="CMSIS-Compiler" Cgroup="I/O" Csub="TTY" Cvariant="Breakpoint" Cvendor="ARM" Cversion="1.0.0" condition="ARMCC CortexDevice">
+        <package name="CMSIS-Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev34+ge49e9cc"/>
         <targetInfos>
           <targetInfo name="Arm"/>
         </targetInfos>
       </component>
-      <component Capiversion="1.0.0" Cclass="Compiler" Cgroup="OS Interface" Csub="CMSIS-RTOS2" Cvendor="ARM" Cversion="1.0.0" condition="ARMCC Cortex-M OS Interface CMSIS-RTOS2">
-        <package name="ARM_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev12+g340b600"/>
+      <component Capiversion="1.0.0" Cclass="CMSIS-Compiler" Cgroup="OS Interface" Csub="CMSIS-RTOS2" Cvendor="ARM" Cversion="1.0.0" condition="CortexDevice CMSIS-RTOS2">
+        <package name="CMSIS-Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.0.0-dev34+ge49e9cc"/>
         <targetInfos>
           <targetInfo name="Arm"/>
+        </targetInfos>
+      </component>
+      <component Cclass="CMSIS-View" Cgroup="Event Recorder" Cvariant="DAP" Cvendor="ARM" Cversion="1.5.2" condition="Cortex-M Device">
+        <package name="CMSIS-View" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="1.1.2-dev58+gea50c5c"/>
+        <targetInfos>
+          <targetInfo name="Arm"/>
+        </targetInfos>
+      </component>
+      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.7.0" condition="ARMv6_7_8-M Device">
+        <package name="CMSIS" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="5.9.1-dev116+ga0595d206"/>
+        <targetInfos>
+          <targetInfo name="Arm"/>
+        </targetInfos>
+      </component>
+      <component Capiversion="2.2.0" Cclass="CMSIS" Cgroup="RTOS2" Csub="Keil RTX5" Cvariant="Source" Cvendor="ARM" Cversion="5.7.0" condition="RTOS2 RTX5">
+        <package name="CMSIS" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="5.9.1-dev116+ga0595d206"/>
+        <targetInfos>
+          <targetInfo name="Arm">
+            <c>
+              <Define>RTX_NO_MULTITHREAD_CLIB</Define>
+            </c>
+          </targetInfo>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="ARM" Cversion="2.0.3" condition="ARMCM3 CMSIS">
-        <package name="CMSIS" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0"/>
+        <package name="CMSIS" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="5.9.1-dev116+ga0595d206"/>
         <targetInfos>
           <targetInfo name="Arm"/>
         </targetInfos>
@@ -568,25 +575,31 @@
     </components>
     <files>
       <file attr="config" category="header" name="EventRecorder\Config\EventRecorderConf.h" version="1.1.0">
-        <instance index="0">RTE\CMSIS\EventRecorderConf.h</instance>
-        <component Cclass="CMSIS" Cgroup="Event Recorder" Cvariant="DAP" Cvendor="ARM" Cversion="1.5.2" condition="Cortex-M Device"/>
-        <package name="CMSIS-View" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="1.1.2-dev31+g21d6ad7"/>
+        <instance index="0">RTE\CMSIS-View\EventRecorderConf.h</instance>
+        <component Cclass="CMSIS-View" Cgroup="Event Recorder" Cvariant="DAP" Cvendor="ARM" Cversion="1.5.2" condition="Cortex-M Device"/>
+        <package name="CMSIS-View" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="1.1.2-dev58+gea50c5c"/>
         <targetInfos>
           <targetInfo name="Arm"/>
         </targetInfos>
       </file>
+      <file attr="config" category="header" name="EventRecorder\Config\EventRecorderConf.h" version="1.1.0">
+        <instance index="0" removed="1">RTE\CMSIS\EventRecorderConf.h</instance>
+        <component Cclass="CMSIS" Cgroup="Event Recorder" Cvariant="DAP" Cvendor="ARM" Cversion="1.5.2" condition="Cortex-M Device"/>
+        <package name="CMSIS-View" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="1.1.2-dev31+g21d6ad7"/>
+        <targetInfos/>
+      </file>
       <file attr="config" category="source" name="CMSIS\RTOS2\RTX\Config\RTX_Config.c" version="5.1.1">
         <instance index="0">RTE\CMSIS\RTX_Config.c</instance>
-        <component Capiversion="2.1.3" Cclass="CMSIS" Cgroup="RTOS2" Csub="Keil RTX5" Cvariant="Source" Cvendor="ARM" Cversion="5.5.4" condition="RTOS2 RTX5"/>
-        <package name="CMSIS" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0"/>
+        <component Capiversion="2.2.0" Cclass="CMSIS" Cgroup="RTOS2" Csub="Keil RTX5" Cvariant="Source" Cvendor="ARM" Cversion="5.7.0" condition="RTOS2 RTX5"/>
+        <package name="CMSIS" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="5.9.1-dev116+ga0595d206"/>
         <targetInfos>
           <targetInfo name="Arm"/>
         </targetInfos>
       </file>
       <file attr="config" category="header" name="CMSIS\RTOS2\RTX\Config\RTX_Config.h" version="5.5.2">
         <instance index="0">RTE\CMSIS\RTX_Config.h</instance>
-        <component Capiversion="2.1.3" Cclass="CMSIS" Cgroup="RTOS2" Csub="Keil RTX5" Cvariant="Source" Cvendor="ARM" Cversion="5.5.4" condition="RTOS2 RTX5"/>
-        <package name="CMSIS" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0"/>
+        <component Capiversion="2.2.0" Cclass="CMSIS" Cgroup="RTOS2" Csub="Keil RTX5" Cvariant="Source" Cvendor="ARM" Cversion="5.7.0" condition="RTOS2 RTX5"/>
+        <package name="CMSIS" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="5.9.1-dev116+ga0595d206"/>
         <targetInfos>
           <targetInfo name="Arm"/>
         </targetInfos>
@@ -600,7 +613,7 @@
       <file attr="config" category="linkerScript" condition="ARMCC6" name="Device\ARM\ARMCM3\Source\ARM\ARMCM3_ac6.sct" version="1.0.0">
         <instance index="0">RTE\Device\ARMCM3\ARMCM3_ac6.sct</instance>
         <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="ARM" Cversion="2.0.3" condition="ARMCM3 CMSIS" isDefaultVariant="1"/>
-        <package name="CMSIS" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0"/>
+        <package name="CMSIS" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="5.9.1-dev116+ga0595d206"/>
         <targetInfos>
           <targetInfo name="Arm"/>
         </targetInfos>
@@ -608,7 +621,7 @@
       <file attr="config" category="sourceC" name="Device\ARM\ARMCM3\Source\startup_ARMCM3.c" version="2.0.3">
         <instance index="0">RTE\Device\ARMCM3\startup_ARMCM3.c</instance>
         <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="ARM" Cversion="2.0.3" condition="ARMCM3 CMSIS" isDefaultVariant="1"/>
-        <package name="CMSIS" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0"/>
+        <package name="CMSIS" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="5.9.1-dev116+ga0595d206"/>
         <targetInfos>
           <targetInfo name="Arm"/>
         </targetInfos>
@@ -616,7 +629,7 @@
       <file attr="config" category="sourceC" name="Device\ARM\ARMCM3\Source\system_ARMCM3.c" version="1.0.1">
         <instance index="0">RTE\Device\ARMCM3\system_ARMCM3.c</instance>
         <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="ARM" Cversion="2.0.3" condition="ARMCM3 CMSIS" isDefaultVariant="1"/>
-        <package name="CMSIS" schemaVersion="1.7.7" url="http://www.keil.com/pack/" vendor="ARM" version="5.9.0"/>
+        <package name="CMSIS" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="5.9.1-dev116+ga0595d206"/>
         <targetInfos>
           <targetInfo name="Arm"/>
         </targetInfos>

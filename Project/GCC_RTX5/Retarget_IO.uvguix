@@ -3605,7 +3605,7 @@
       <Size>100</Size>
       <ActiveTab>1</ActiveTab>
       <Doc>
-        <Name>C:/Arm/Packs/ARM/GCC_Compiler/1.0.0-dev7/Source/retarget_syscalls.c</Name>
+        <Name>C:/Arm/Packs/ARM/CMSIS-Compiler/1.0.0/source/gcc/retarget_syscalls.c</Name>
         <ColumnNumber>0</ColumnNumber>
         <TopLine>1</TopLine>
         <CurrentLine>1</CurrentLine>
@@ -3614,7 +3614,7 @@
         <PaneID>0</PaneID>
       </Doc>
       <Doc>
-        <Name>C:/Arm/Packs/ARM/GCC_Compiler/1.0.0-dev7/Source/retarget_lock_rtos2.c</Name>
+        <Name>C:/Arm/Packs/ARM/CMSIS-Compiler/1.0.0-dev34/source/gcc/retarget_lock_rtos2.c</Name>
         <ColumnNumber>0</ColumnNumber>
         <TopLine>1</TopLine>
         <CurrentLine>1</CurrentLine>
